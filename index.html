@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 		<script type="text/javascript" src="js/socket.io.js"></script>
+		<script type="text/javascript" src="Algorithm.js"></script>
 	</body>
 	</head>
 	<body>
@@ -30,8 +31,16 @@
 		<script>
 			var socket = io();
 			document.getElementById('but').onclick = function () {
-				socket.emit('machineStart', {hi: "hi", hui: "hui"});
+				socket.emit('machineStart', document.getElementsByClassName("input")[0].value);
 			}
+			
+			socket.on("result", function(msg) {
+				console.log(msg)
+				if (msg)
+					document.getElementsByClassName("text-danger")[0].innerHTML = "Десятичное число";
+				else 
+					document.getElementsByClassName("text-danger")[0].innerHTML = "Не десятичное число";
+			});
 		</script>
 		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
