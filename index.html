@@ -4,8 +4,9 @@
 		<meta charset="UTF-8">
 		<title>Avtomat</title>
 		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/reset.css" />
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script type="text/javascript" src="js/socket.io.js"></script>
+	</body>
 	</head>
 	<body>
 		<div class="col-md-12 b_chap">
@@ -16,7 +17,7 @@
 					<div class="busy"></div>
 					<div class="input-append">
 						<input type="text" class="input" placeholder="Ввведите число"/>
-						<button type="button" class="btn btn-success">Проверить</button>
+						<button type="button" class="btn btn-success" id="but">Проверить</button>
 					</div>
 					<div class="rezult">
 						<!--<p class="text-success">Результат: Десятичное число</p>-->
@@ -26,10 +27,12 @@
 				<div class="col-md-7"></div>				
 			</div>
 		</div>
+		<script>
+			var socket = io();
+			document.getElementById('but').onclick = function () {
+				socket.emit('machineStart', {hi: "hi", hui: "hui"});
+			}
+		</script>
 		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/chat-bot.js"></script>
-		<script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript" src="js/socket.io.js"></script>
-	</body>
 </html>

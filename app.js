@@ -14,9 +14,9 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
+	//console.log('Got message: ', socket);
   socket.on('machineStart', function(msg){
 		console.log('Got message: ', msg);
-    io.emit('chat message', msg);
   });
 });
 
