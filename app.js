@@ -74,7 +74,7 @@ function machine(msg)
 	
 	var symbols = 
 	{
-		values: ['0', '1', '2', '3', '4', '6', '6', '7', '8', '9', '.'],
+		values: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'],
 		getSymb: function(idx) {
 			return this.values[idx];
 		}		
