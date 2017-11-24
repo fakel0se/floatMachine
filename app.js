@@ -66,7 +66,7 @@ function machine(msg)
 			return this.values[idx];
 		},
 		isAvailable: function(state) {
-			if (state == this.values[1])
+			if (state == this.values[2])
 				return false;
 			return true;			
 		}
