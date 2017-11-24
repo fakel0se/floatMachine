@@ -66,7 +66,7 @@ function machine(msg)
 			return this.values[idx];
 		},
 		isAvailable: function(state) {
-			if (state == this.values[2])
+			if (state == this.values[1])
 				return false;
 			return true;			
 		}
@@ -74,7 +74,7 @@ function machine(msg)
 	
 	var symbols = 
 	{
-		values: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'],
+		values: ['0', '1', '2', '3', '4', '6', '6', '7', '8', '9', '.'],
 		getSymb: function(idx) {
 			return this.values[idx];
 		}		
@@ -116,8 +116,8 @@ function machine(msg)
 	var currentState = states.getState(0);
 	var belong = false;
 	
-	//if (msg[0] == '.')
-	//	currentState = states[2];
+	if (msg[0] == '.')
+		currentState = states[2];
 	
 	for (let i = 0; i < msg.length; i++)
 	{
