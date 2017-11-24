@@ -117,7 +117,7 @@ function machine(msg)
 	var belong = false;
 	
 	if (msg[0] == '.')
-		currentState = states[2];
+		currentState = states.getState(2);
 	
 	for (let i = 0; i < msg.length; i++)
 	{
